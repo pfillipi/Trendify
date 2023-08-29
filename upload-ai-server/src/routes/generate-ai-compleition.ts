@@ -26,6 +26,11 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
         .send({ error: "Video transcription was not generated yet." });
     }
 
+    const promptMessage = template.replace(
+      "{transcription}",
+      video.transcription
+    );
+
     return {
       videoId,
       template,
