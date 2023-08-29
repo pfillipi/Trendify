@@ -26,6 +26,8 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
         .send({ error: "Video transcription was not generated yet." });
     }
 
+    const response = await openai.chat.completions.create({});
+
     const promptMessage = template.replace(
       "{transcription}",
       video.transcription
