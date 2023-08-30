@@ -20,6 +20,9 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
       },
     });
 
+    if (!video.transcription) {
+    }
+
     return {
       videoId,
       template,
