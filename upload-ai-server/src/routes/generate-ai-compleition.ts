@@ -14,6 +14,12 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
 
     const { videoId, template, temperature } = bodySchema.parse(req.body);
 
+    const video = await prisma.video.findUniqueOrThrow({
+      where: {
+        id: videoId,
+      },
+    });
+
     return {
       videoId,
       template,
