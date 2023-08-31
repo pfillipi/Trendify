@@ -27,7 +27,7 @@ Content-Type: application/json
 ###
 
 # @name generate-ai-completion
-POST http://localhost:3333/ai/generate
+POST http://localhost:3333/ai/complete
 Content-Type: application/json
 
 {
