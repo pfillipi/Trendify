@@ -31,5 +31,5 @@ POST http://localhost:3333/ai/generate
 Content-Type: application/json
 
 {
-  "videoId": "concurrenciais, praticas"
+  "videoId": "2cab26f1-1934-4531-aa2d-b8d105d32243"
 }
