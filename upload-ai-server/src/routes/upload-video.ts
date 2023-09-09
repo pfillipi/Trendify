@@ -24,5 +24,9 @@ export async function uploadVideoRoute(app: FastifyInstance) {
         .status(400)
         .send({ error: "Ugyldig inndatatype, last opp en MP3." });
     }
+
+    const fileBaseName = path.basename(data.filename, extension);
+
+    const fileUploadName = `${fileBaseName}`;
   });
 }
