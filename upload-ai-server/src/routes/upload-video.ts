@@ -13,7 +13,7 @@ export async function uploadVideoRoute(app: FastifyInstance) {
     const data = await request.file();
 
     if (!data) {
-      return reply.status(400).send({error: })
+      return reply.status(400).send({ error: "Mangler filinndata." });
     }
   });
 }
