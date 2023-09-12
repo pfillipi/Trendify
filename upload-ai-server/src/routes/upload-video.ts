@@ -1,10 +1,9 @@
 import { FastifyInstance } from "fastify";
+import { fastifyMultipart } from "@fastify/multipart";
 import { prisma } from "../lib/prisma";
 
 export async function uploadVideoRoute(app: FastifyInstance) {
-  app.post("/videos", async () => {
-    const prompts = await prisma.prompt.findMany();
+  app.register(fastifyMultipart, {});
 
-    return prompts;
-  });
+  app.post("/videos", async () => {});
 }
