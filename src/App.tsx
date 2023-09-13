@@ -1,4 +1,4 @@
-import { Github, FileVideo, Upload } from "lucide-react";
+import { Github, FileVideo, Upload, Wand2 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
+import { Slider } from "./components/ui/slider";
 
 export function App() {
   return (
@@ -106,13 +107,20 @@ export function App() {
 
             <Separator />
 
-            <div className="space-y-2">
+            <div className="space-y-4">
               <Label>temperatur</Label>
-              <span className="block text-xs text-muted-foreground italic">
+              <Slider min={0} max={1} step={0.1} />
+              <span className="block text-xs text-muted-foreground italic leading-relaxed">
                 Når du øker verdiene, blir resultatet ofte mer kreativt, men det
                 kan også føre til potensielle feil.
               </span>
             </div>
+
+            <Separator />
+
+            <Button type="submit" className="w-full">
+              send <Wand2 className="w-4 h-4 ml-2" />
+            </Button>
           </form>
         </aside>
       </main>
