@@ -20,7 +20,7 @@ export function App() {
 
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">
-            ❤️‍🔥🇳🇴Skapt med lidenskap i hjertet av Norge.🇳🇴❤️‍🔥
+            ❤️‍🔥🇳🇴Skapt med lidenskap i hjertet av Oslo.🇳🇴❤️‍🔥
           </span>
 
           <Separator orientation="vertical" className="h-6" />
