@@ -91,6 +91,19 @@ export function App() {
           <Separator />
           <form className="space-y-6">
             <div className="space-y-2">
+              <Label>prompt</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Velg en prompt…" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="title">YouTube-tittel</SelectItem>
+                  <SelectItem value="title">YouTube beskrivelse</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
               <Label>modell</Label>
               <Select disabled defaultValue="gpt3.5">
                 <SelectTrigger>
@@ -104,7 +117,6 @@ export function App() {
                 Snart vil du ha muligheten til å tilpasse dette alternativet
               </span>
             </div>
-
             <Separator />
 
             <div className="space-y-4">
