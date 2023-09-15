@@ -103,6 +103,16 @@ export function App() {
                 Snart vil du ha muligheten til å tilpasse dette alternativet
               </span>
             </div>
+
+            <Separator />
+
+            <div className="space-y-2">
+              <Label>temperatur</Label>
+              <span className="block text-xs text-muted-foreground italic">
+                Når du øker verdiene, blir resultatet ofte mer kreativt, men det
+                kan også føre til potensielle feil.
+              </span>
+            </div>
           </form>
         </aside>
       </main>
