@@ -91,7 +91,7 @@ export function App() {
           <form className="space-y-6">
             <div className="space-y-2">
               <Label>modell</Label>
-              <Select defaultValue="gpt3.5">
+              <Select disabled defaultValue="gpt3.5">
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
@@ -99,6 +99,9 @@ export function App() {
                   <SelectItem value="gpt3.5">GPT 3.5-turbo 16k</SelectItem>
                 </SelectContent>
               </Select>
+              <span className="block text-xs text-muted-foreground italic">
+                Snart vil du ha muligheten til å tilpasse dette alternativet
+              </span>
             </div>
           </form>
         </aside>
