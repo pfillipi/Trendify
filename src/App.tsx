@@ -87,23 +87,21 @@ export function App() {
               <Upload className="w-4 h-4 ml-2" />
             </Button>
           </form>
+          <Separator />
+          <form className="space-y-6">
+            <div className="space-y-2">
+              <Label>modell</Label>
+              <Select defaultValue="gpt3.5">
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="gpt3.5">GPT 3.5-turbo 16k</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </form>
         </aside>
-
-        <Separator />
-
-        <form className="space-y-6">
-          <div className="space-y-2">
-            <Label>modell</Label>
-            <Select>
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="gpt 3.5">GPT 3.5-turbo 16k</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        </form>
       </main>
     </div>
   );
