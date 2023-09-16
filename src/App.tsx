@@ -3,7 +3,13 @@ import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
-import { Select, SelectTrigger, SelectValue } from "./components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./components/ui/select";
 
 export function App() {
   return (
@@ -92,6 +98,9 @@ export function App() {
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gpt 3.5">GPT 3.5-turbo 16k</SelectItem>
+              </SelectContent>
             </Select>
           </div>
         </form>
