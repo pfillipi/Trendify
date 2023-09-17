@@ -3,6 +3,7 @@ import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
+import { Select, SelectTrigger, SelectValue } from "./components/ui/select";
 
 export function App() {
   return (
@@ -87,6 +88,11 @@ export function App() {
         <form className="space-y-6">
           <div className="space-y-2">
             <Label>modell</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+            </Select>
           </div>
         </form>
       </main>
