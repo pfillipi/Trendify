@@ -71,7 +71,7 @@ export function App() {
               </Label>
               <Textarea
                 id="transcription_prompt"
-                className="h-20 leading-relaxed"
+                className="h-20 leading-relaxed resize-none"
                 placeholder="Vennligst inkluder nøkkelord som ble nevnt i videon, og skill dem med komma (,)"
               />
             </div>
