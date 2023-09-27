@@ -15,5 +15,10 @@ export async function createTranscriptionRoute(app: FastifyInstance) {
     });
 
     const { prompt } = bodySchema.parse(req.body);
+
+    return {
+      videoId,
+      prompt,
+    };
   });
 }
