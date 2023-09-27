@@ -5,7 +5,7 @@ import { prisma } from "../lib/prisma";
 import { openai } from "../lib/openai";
 
 export async function createTranscriptionRoute(app: FastifyInstance) {
-  app.post("/videos/:videoId/transcription", async (req, res) => {
+  app.post("/videos/:videoId/transcription", async (req) => {
     const paramsSchema = z.object({
       videoId: z.string().uuid(),
     });
