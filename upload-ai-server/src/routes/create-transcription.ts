@@ -36,6 +36,6 @@ export async function createTranscriptionRoute(app: FastifyInstance) {
       prompt,
     });
 
-    return response.text;
+    return prisma.video.update;
   });
 }
