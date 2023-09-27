@@ -18,7 +18,8 @@ Content-Type: audio/mpeg
 
 # @name create-transcription
 POST http://localhost:3333/videos/2cab26f1-1934-4531-aa2d-b8d105d32243/transcription
+Content-Type: application/json
 
 {
-  "prompt": "concurrenciais"
+  "prompt": "concurrenciais, praticas"
 }
