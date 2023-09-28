@@ -7,6 +7,7 @@ import { openai } from "../lib/openai";
 export async function generateAICompletionRoute(app: FastifyInstance) {
   app.post("/ai/complete", async (req) => {
     const bodySchema = z.object({
+      videoId: z.string().uuid(),
       prompt: z.string(),
     });
 
