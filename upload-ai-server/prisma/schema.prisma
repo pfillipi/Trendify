@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Video {
-  id             String   @id @default(uuid())
-  name           String
-  path           String
-  transcriptions String?
-  createdAt      DateTime @default(now())
+  id            String   @id @default(uuid())
+  name          String
+  path          String
+  transcription String?
+  createdAt     DateTime @default(now())
 }
 
 model Prompt {
