@@ -9,7 +9,7 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
     const bodySchema = z.object({
       videoId: z.string().uuid(),
       template: z.string(),
-      temperature: z.number().min(0),
+      temperature: z.number().min(0).max(1),
     });
 
     const { prompt } = bodySchema.parse(req.body);
