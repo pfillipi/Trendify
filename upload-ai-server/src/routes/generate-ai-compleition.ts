@@ -12,6 +12,6 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
       temperature: z.number().min(0).max(1).default(0.5),
     });
 
-    const { videoId } = bodySchema.parse(req.body);
+    const { videoId, template } = bodySchema.parse(req.body);
   });
 }
