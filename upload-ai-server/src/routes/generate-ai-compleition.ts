@@ -13,5 +13,9 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
     });
 
     const { videoId, template, temperature } = bodySchema.parse(req.body);
+
+    return {
+      videoId,
+    };
   });
 }
