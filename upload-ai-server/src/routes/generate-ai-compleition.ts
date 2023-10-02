@@ -17,6 +17,7 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
     return {
       videoId,
       template,
+      temperature,
     };
   });
 }
