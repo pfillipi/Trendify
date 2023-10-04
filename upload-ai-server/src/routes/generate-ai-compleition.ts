@@ -23,15 +23,19 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
     if (!video.transcription) {
       return reply
         .status(400)
-        .send({ error: "Video transcription was not generated yet." });
+        .send({ error: "Videotranskripsjon er ikke generert ennå." });
     }
-
-    const response = await openai.chat.completions.create({});
 
     const promptMessage = template.replace(
       "{transcription}",
       video.transcription
     );
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo-16k",
+      temperature,
+      messages: [{ role: "user", content: promptMessage }],
+    });
 
     return {
       videoId,
