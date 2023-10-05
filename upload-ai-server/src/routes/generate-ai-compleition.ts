@@ -37,10 +37,6 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
       messages: [{ role: "user", content: promptMessage }],
     });
 
-    return {
-      videoId,
-      template,
-      temperature,
-    };
+    return response;
   });
 }
