@@ -19,6 +19,8 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
+  const previewURL =
+
   return (
     <form className="space-y-6">
       <label
