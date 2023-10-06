@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { ChangeEvent, useState } from "react";
 
 export function VideInputForm() {
-  const [] = useState(null);
+  const [videoFile, setVideoFile] = useState<File | null>(null);
 
   function handleFileSelected(event: ChangeEvent<HTMLInputElement>) {
     const { files } = event.currentTarget;
@@ -15,6 +15,8 @@ export function VideInputForm() {
       return;
     }
     const selectedFile = files[0];
+
+    setVideoFile(selectedFile);
   }
 
   return (
