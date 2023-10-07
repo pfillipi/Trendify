@@ -19,7 +19,7 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
-  const previewURL = useMemo(())
+  const previewURL = useMemo(() => {});
 
   return (
     <form className="space-y-6">
