@@ -30,13 +30,13 @@ export function VideInputForm() {
     <form className="space-y-6">
       <label
         htmlFor="video"
-        className="border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
+        className="relative border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
       >
         {previewURL ? (
           <video
             src={previewURL}
             controls={false}
-            className="pointer-events-none"
+            className="pointer-events-none absolute inset-0"
           />
         ) : (
           <>
