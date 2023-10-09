@@ -22,6 +22,14 @@ export function VideInputForm() {
 
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const prompt = promptInputRef.current?.value;
+
+    if (!videoFile) {
+      return;
+    }
+
+    // converter o vídeo em áudio
   }
 
   const previewURL = useMemo(() => {
@@ -62,6 +70,7 @@ export function VideInputForm() {
       <div className="space-y-2">
         <Label htmlFor="transcription_prompt">Transkripsjons prompt</Label>
         <Textarea
+          ref={promptInputRef}
           id="transcription_prompt"
           className="h-20 leading-relaxed resize-none"
           placeholder="Vennligst inkluder nøkkelord som ble nevnt i videon, og skill dem med komma (,)"
