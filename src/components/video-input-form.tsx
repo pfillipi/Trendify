@@ -4,6 +4,8 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
+import { getFFmpeg } from "@/lib/ffmpeg";
+import { fetchFile } from "@ffmpeg/util";
 
 export function VideInputForm() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -20,6 +22,26 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
+  async function convertVideoToaudio(video: File) {
+    console.log("Konvertering startet.");
+
+    const ffmpeg = await getFFmpeg();
+
+    await ffmpeg.writeFile("input.mp4", await fetchFile(video));
+
+    // ffmpeg.on("log", (log) => {
+    //   console.log("log");
+    // });
+
+    ffmpeg.on("progress", (progress) => {
+      console.log(
+        "Konverteringsfremgang: " + Math.round(progress.progress * 100)
+      );
+    });
+
+    await ffmpeg.exec(["-i", "input.mp4", "-b:a", "20k", "output.mp3"]);
+  }
+
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -29,7 +51,7 @@ export function VideInputForm() {
       return;
     }
 
-    // converter o vídeo em áudio
+    // Konverter fra video til lyd
   }
 
   const previewURL = useMemo(() => {
