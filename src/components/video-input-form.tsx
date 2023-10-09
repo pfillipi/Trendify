@@ -3,10 +3,11 @@ import { Separator } from "./ui/separator";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { ChangeEvent, FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 
 export function VideInputForm() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
+  const promptInputRef = useRef<HTMLTextAreaElement>(null);
 
   function handleFileSelected(event: ChangeEvent<HTMLInputElement>) {
     const { files } = event.currentTarget;
@@ -19,7 +20,9 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
-  function handleUploadVideo(event: FormEvent<HTMLFormElement>) {}
+  function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
 
   const previewURL = useMemo(() => {
     if (!videoFile) {
