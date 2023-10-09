@@ -3,7 +3,7 @@ import { Separator } from "./ui/separator";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 
 export function VideInputForm() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -19,6 +19,8 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
+  function handleUploadVideo(event: FormEvent<HTMLFormElement>) {}
+
   const previewURL = useMemo(() => {
     if (!videoFile) {
       return null;
@@ -27,7 +29,7 @@ export function VideInputForm() {
   }, [videoFile]);
 
   return (
-    <form className="space-y-6">
+    <form onSubmit={handleUploadVideo} className="space-y-6">
       <label
         htmlFor="video"
         className="relative border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
