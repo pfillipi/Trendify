@@ -45,6 +45,7 @@ export function VideInputForm() {
       "-b:a",
       "20k",
       "-acodec",
+      "libmp3lame",
       "output.mp3",
     ]);
   }
