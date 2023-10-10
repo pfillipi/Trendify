@@ -43,6 +43,7 @@ export function VideInputForm() {
       "-i",
       "input.mp4",
       "-map",
+      "0:a",
       "-b:a",
       "20k",
       "-acodec",
