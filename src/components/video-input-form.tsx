@@ -39,7 +39,14 @@ export function VideInputForm() {
       );
     });
 
-    await ffmpeg.exec(["-i", "input.mp4", "-b:a", "20k", "output.mp3"]);
+    await ffmpeg.exec([
+      "-i",
+      "input.mp4",
+      "-b:a",
+      "20k",
+      "-acodec",
+      "output.mp3",
+    ]);
   }
 
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
