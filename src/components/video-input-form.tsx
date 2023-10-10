@@ -42,6 +42,7 @@ export function VideInputForm() {
     await ffmpeg.exec([
       "-i",
       "input.mp4",
+      "-map",
       "-b:a",
       "20k",
       "-acodec",
