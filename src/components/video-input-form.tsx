@@ -61,7 +61,7 @@ export function VideInputForm() {
     console.log("Konvertering ferdig.");
   }
 
-  function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
+  async function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const prompt = promptInputRef.current?.value;
@@ -71,6 +71,10 @@ export function VideInputForm() {
     }
 
     // Konverter fra video til lyd
+
+    const audioFile = await convertVideoToaudio(videoFile);
+
+    console.log(audioFile);
   }
 
   const previewURL = useMemo(() => {
