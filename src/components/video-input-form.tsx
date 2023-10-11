@@ -50,6 +50,8 @@ export function VideInputForm() {
       "libmp3lame",
       "output.mp3",
     ]);
+
+    const data = await ffmpeg.readFile;
   }
 
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
