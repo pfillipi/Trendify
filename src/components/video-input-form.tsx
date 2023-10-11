@@ -51,9 +51,12 @@ export function VideInputForm() {
       "output.mp3",
     ]);
 
-    const data = await ffmpeg.readFile;
+    const data = await ffmpeg.readFile("output.mp3");
 
     const audioFileBlob = new Blob([data], { type: "audio/mpeg" });
+    const audioFile = new File([audioFileBlob], "audio.mp3", {
+      type: "audio/mpeg",
+    });
   }
 
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
