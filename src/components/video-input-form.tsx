@@ -57,6 +57,8 @@ export function VideInputForm() {
     const audioFile = new File([audioFileBlob], "audio.mp3", {
       type: "audio/mpeg",
     });
+
+    console.log("Konvertering ferdig.");
   }
 
   function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
