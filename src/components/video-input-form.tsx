@@ -6,9 +6,14 @@ import { Button } from "./ui/button";
 import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 import { getFFmpeg } from "@/lib/ffmpeg";
 import { fetchFile } from "@ffmpeg/util";
+import { api } from "@/lib/axios";
+
+type Status = "waiting" | "converting" | "uploading" | "generating" | "success";
 
 export function VideInputForm() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
+  const [status, setStatus] = useState<Status>("waiting");
+
   const promptInputRef = useRef<HTMLTextAreaElement>(null);
 
   function handleFileSelected(event: ChangeEvent<HTMLInputElement>) {
@@ -74,9 +79,27 @@ export function VideInputForm() {
 
     // Konverter fra video til lyd
 
+    setStatus("converting");
+
     const audioFile = await convertVideoToAudio(videoFile);
 
     const data = new FormData();
+
+    data.append("file", audioFile);
+
+    setStatus("uploading");
+
+    const response = await api.post("/videos", data);
+
+    const videoId = response.data.video.id;
+
+    setStatus("generating");
+
+    await api.post(`videos/${videoId}/transcription`, {
+      prompt,
+    });
+
+    setStatus("success");
   }
 
   const previewURL = useMemo(() => {
@@ -123,7 +146,7 @@ export function VideInputForm() {
           placeholder="Vennligst inkluder nøkkelord som ble nevnt i videon, og skill dem med komma (,)"
         />
       </div>
-      <Button type="submit" className="w-full">
+      <Button disabled={status !== "waiting"} type="submit" className="w-full">
         Lagre video
         <Upload className="w-4 h-4 ml-2" />
       </Button>
