@@ -69,7 +69,9 @@ export function App() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="title">YouTube-tittel</SelectItem>
-                  <SelectItem value="title">YouTube beskrivelse</SelectItem>
+                  <SelectItem value="description">
+                    YouTube beskrivelse
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
