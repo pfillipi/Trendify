@@ -22,7 +22,7 @@ export function VideInputForm() {
     setVideoFile(selectedFile);
   }
 
-  async function convertVideoToaudio(video: File) {
+  async function convertVideoToAudio(video: File) {
     console.log("Konvertering startet.");
 
     const ffmpeg = await getFFmpeg();
@@ -59,6 +59,8 @@ export function VideInputForm() {
     });
 
     console.log("Konvertering ferdig.");
+
+    return audioFile;
   }
 
   async function handleUploadVideo(event: FormEvent<HTMLFormElement>) {
@@ -72,7 +74,7 @@ export function VideInputForm() {
 
     // Konverter fra video til lyd
 
-    const audioFile = await convertVideoToaudio(videoFile);
+    const audioFile = await convertVideoToAudio(videoFile);
 
     console.log(audioFile);
   }
