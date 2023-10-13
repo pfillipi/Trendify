@@ -12,6 +12,7 @@ import {
 } from "./components/ui/select";
 import { Slider } from "./components/ui/slider";
 import { VideInputForm } from "./components/video-input-form";
+import { PromptSelect } from "./components/prompt-select";
 
 export function App() {
   return (
@@ -63,17 +64,8 @@ export function App() {
           <form className="space-y-6">
             <div className="space-y-2">
               <Label>prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Velg en prompt…" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="title">YouTube-tittel</SelectItem>
-                  <SelectItem value="template">YouTube beskrivelse</SelectItem>
-                </SelectContent>
-              </Select>
             </div>
-
+            <PromptSelect />
             <div className="space-y-2">
               <Label>modell</Label>
               <Select disabled defaultValue="gpt3.5">

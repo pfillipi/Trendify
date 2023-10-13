@@ -10,6 +10,13 @@ import { api } from "@/lib/axios";
 
 type Status = "waiting" | "converting" | "uploading" | "generating" | "success";
 
+const statusMessages = {
+  converting: "Gonvertering…",
+  generating: "Generering…",
+  uploading: "Opplasting…",
+  success: "Suksess!",
+};
+
 export function VideInputForm() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [status, setStatus] = useState<Status>("waiting");
@@ -141,14 +148,26 @@ export function VideInputForm() {
         <Label htmlFor="transcription_prompt">Transkripsjons prompt</Label>
         <Textarea
           ref={promptInputRef}
+          disabled={status !== "waiting"}
           id="transcription_prompt"
           className="h-20 leading-relaxed resize-none"
           placeholder="Vennligst inkluder nøkkelord som ble nevnt i videon, og skill dem med komma (,)"
         />
       </div>
-      <Button disabled={status !== "waiting"} type="submit" className="w-full">
-        Lagre video
-        <Upload className="w-4 h-4 ml-2" />
+      <Button
+        data-success={status === "success"}
+        disabled={status !== "waiting"}
+        type="submit"
+        className="w-full data-[success=true]:bg-emerald-400"
+      >
+        {status === "waiting" ? (
+          <>
+            Lagre video
+            <Upload className="w-4 h-4 ml-2" />
+          </>
+        ) : (
+          statusMessages[status]
+        )}
       </Button>
     </form>
   );
