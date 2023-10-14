@@ -15,6 +15,8 @@ import { VideInputForm } from "./components/video-input-form";
 import { PromptSelect } from "./components/prompt-select";
 
 export function App() {
+  function handlePromptSelected(template: string) {}
+
   return (
     <div className="min-h-screen flex flex-col">
       <div className="px-6 py-3 flex items-center justify-between border-b">
