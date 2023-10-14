@@ -62,12 +62,15 @@ export function App() {
 
         <aside className="w-80 space-y-6">
           <VideInputForm />
+
           <Separator />
+
           <form className="space-y-6">
             <div className="space-y-2">
               <Label>prompt</Label>
+              <PromptSelect onPromptSelected={handlePromptSelected} />
             </div>
-            <PromptSelect />
+
             <div className="space-y-2">
               <Label>modell</Label>
               <Select disabled defaultValue="gpt3.5">
