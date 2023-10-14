@@ -8,8 +8,14 @@ import {
 } from "./ui/select";
 import { api } from "@/lib/axios";
 
+interface Prompt {
+  id: string;
+  title: string;
+  template: string;
+}
+
 export function PromptSelect() {
-  const [prompts, setPrompts] = useState(null);
+  const [prompts, setPrompts] = useState<Prompt [] | null>(null);
 
   useEffect(() => {
     api.get("/prompts").then((response) => {
@@ -22,7 +28,7 @@ export function PromptSelect() {
       <SelectTrigger>
         <SelectValue placeholder="Velg en prompt…" />
       </SelectTrigger>
-      <SelectContent>{prompts}</SelectContent>
+      <SelectContent>{prompts.}</SelectContent>
     </Select>
   );
 }
