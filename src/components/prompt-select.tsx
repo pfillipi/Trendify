@@ -15,7 +15,7 @@ interface Prompt {
 }
 
 export function PromptSelect() {
-  const [prompts, setPrompts] = useState<Prompt [] | null>(null);
+  const [prompts, setPrompts] = useState<Prompt[] | null>(null);
 
   useEffect(() => {
     api.get("/prompts").then((response) => {
@@ -28,7 +28,15 @@ export function PromptSelect() {
       <SelectTrigger>
         <SelectValue placeholder="Velg en prompt…" />
       </SelectTrigger>
-      <SelectContent>{prompts.}</SelectContent>
+      <SelectContent>
+        {prompts?.map((prompt) => {
+          return (
+            <SelectItem key={prompt.id} value={prompt.id}>
+              {prompt.title}
+            </SelectItem>
+          );
+        })}
+      </SelectContent>
     </Select>
   );
 }
