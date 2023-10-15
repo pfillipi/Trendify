@@ -11,11 +11,17 @@ import {
   SelectValue,
 } from "./components/ui/select";
 import { Slider } from "./components/ui/slider";
-import { VideInputForm } from "./components/video-input-form";
+import { VideoInputForm } from "./components/video-input-form";
 import { PromptSelect } from "./components/prompt-select";
+import { useState } from "react";
 
 export function App() {
-  function handlePromptSelected(template: string) {}
+  const [temperature, setTemperature] = useState(0.3);
+  const [videoId, setVideoId] = useState<string | null>(null);
+
+  function handlePromptSelected(template: string) {
+    console.log(template);
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -61,7 +67,7 @@ export function App() {
         </div>
 
         <aside className="w-80 space-y-6">
-          <VideInputForm />
+          <VideoInputForm />
 
           <Separator />
 
@@ -89,7 +95,13 @@ export function App() {
 
             <div className="space-y-4">
               <Label>temperatur</Label>
-              <Slider min={0} max={1} step={0.1} />
+              <Slider
+                min={0}
+                max={1}
+                step={0.1}
+                value={[temperature]}
+                onValueChange={(value) => setTemperature(value[0])}
+              />
               <span className="block text-xs text-muted-foreground italic leading-relaxed">
                 Når du øker verdiene, blir resultatet ofte mer kreativt, men det
                 kan også føre til potensielle feil.
