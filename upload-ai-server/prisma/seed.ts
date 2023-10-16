@@ -6,23 +6,23 @@ async function main() {
 
   await prisma.prompt.create({
     data: {
-      title: "Título YouTube",
-      template: `Seu papel é gerar três títulos para um vídeo do YouTube.
+      title: "Tittel YouTube",
+      template: `Din rolle er å generere tre titler for en YouTube-video.
 
-Abaixo você receberá uma transcrição desse vídeo, use essa transcrição para gerar os títulos.
-Abaixo você também receberá uma lista de títulos, use essa lista como referência para os títulos a serem gerados.
+Nedenfor vil du motta en transkripsjon av denne videoen, bruk denne transkripsjonen til å generere titlene.
+Nedenfor vil du også motta en liste over titler, bruk denne listen som referanse for titlene som skal genereres.
 
-Os títulos devem ter no máximo 60 caracteres.
-Os títulos devem ser chamativos e atrativos para maximizar os cliques.
+Titler må ha maksimalt 60 tegn.
+Titler må være iøynefallende og attraktive for å maksimere klikk.
 
-Retorne APENAS os três títulos em formato de lista como no exemplo abaixo:
+Returner KUN de tre titlene i listeformat som i eksemplet nedenfor:
 '''
-- Título 1
-- Título 2
-- Título 3
+- Tittel 1
+- Tittel 2
+- Tittel 3
 '''
 
-Transcrição:
+Transkripsjon:
 '''
 {transcription}
 '''`.trim(),
@@ -31,26 +31,26 @@ Transcrição:
 
   await prisma.prompt.create({
     data: {
-      title: "Descrição YouTube",
+      title: "Beskrivelse YouTube",
       template:
-        `Seu papel é gerar uma descrição sucinta para um vídeo do YouTube.
+        `Din rolle er å generere en kortfattet beskrivelse for en YouTube-video.
   
-Abaixo você receberá uma transcrição desse vídeo, use essa transcrição para gerar a descrição.
+Nedenfor vil du motta en transkripsjon av denne videoen, bruk denne transkripsjonen til å generere beskrivelsen.
 
-A descrição deve possuir no máximo 80 palavras em primeira pessoa contendo os pontos principais do vídeo.
+Beskrivelsen må ha maksimalt 80 ord i den første personen som inneholder hovedpoengene i videoen.
 
-Use palavras chamativas e que cativam a atenção de quem está lendo.
+Bruk iøynefallende ord som fanger oppmerksomheten til de som leser.
 
-Além disso, no final da descrição inclua uma lista de 3 até 10 hashtags em letra minúscula contendo palavras-chave do vídeo.
+I tillegg, på slutten av beskrivelsen, inkluderer en liste med 3 til 10 hashtags med små bokstaver som inneholder videoens nøkkelord.
 
-O retorno deve seguir o seguinte formato:
+Returen må følge følgende format:
 '''
-Descrição.
+Beskrivelse.
 
 #hashtag1 #hashtag2 #hashtag3 ...
 '''
 
-Transcrição:
+Transkripsjon:
 '''
 {transcription}
 '''`.trim(),
