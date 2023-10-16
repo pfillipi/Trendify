@@ -39,5 +39,12 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
     });
 
     const stream = OpenAIStream(response);
+
+    streamToResponse(stream, reply.raw, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      },
+    });
   });
 }
