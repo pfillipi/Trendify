@@ -48,10 +48,10 @@ Nødvendige installasjoner:
 pnpm install
 ```
 
-Run backend:
+Kjør backend:
 
-- Configure [environment variables](#environment-variables---only-backend) for the backend.
-- With the variables configured, run `pnpm run dev`. Your application will start at <http://localhost:3333>.
+- Sett opp [miljøvariabler](#environment-variables---only-backend) for backenden.
+- Når variablene er konfigurert, kjør `pnpm run dev`. Applikasjon din starter på <http://localhost:3333>.
 
 ### Web - Frontend
 
