@@ -34,7 +34,7 @@ git clone https://github.com/dkshs/nlw-ai.git
 To start the application we must start with the backend. Enter the backend folder:
 
 ```bash
-cd api/
+cd upload-ai-server/
 ```
 
 Install dependencies:
