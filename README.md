@@ -24,12 +24,11 @@ Dette er en nettbasert app som starter ved å konvertere videoen til lyd, derett
 ### Nødvendige globalavhengigheter
 
 Du må ha hovedavhengigheten installert:
-
 - Node.js LTS v16 (eller nyere versjon)
 
-Hvis du bruker `pnpm`, kan du deretter kjøre nvm install i prosjektmappen for å installere og bruke den mest egnede versjonen av Node.js.
+Hvis du bruker `nvm`, kan du deretter kjøre `nvm install` i prosjektmappen for å installere og bruke den mest egnede versjonen av Node.js.
 
-### Get the repository
+### Hent depotet:
 
 ```bash
 git clone https://github.com/dkshs/nlw-ai.git
