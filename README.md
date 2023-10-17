@@ -2,7 +2,7 @@
 
 Dette er en nettbasert app som starter ved å konvertere videoen til lyd, deretter transkriberer den til tekst. Ved hjelp av kunstig intelligens kan den også gi forslag til den optimale tittelen, beskrivelsen og hashtagene for videoen din.
 
-## Directories and their technologies
+## Teknologier
 
 - [`api`](/api/) - Backend.
   - [Fastify](https://fastify.dev/)
@@ -19,15 +19,15 @@ Dette er en nettbasert app som starter ved å konvertere videoen til lyd, derett
   - [Vercel AI SDK](https://github.com/vercel/ai/)
   - [Shadcn/ui](https://ui.shadcn.com)
 
-## Install and run the project
+## Sett opp og kjør prosjektet
 
-### Global Dependencies
+### Nødvendige globalavhengigheter
 
-You need to have a main dependency installed:
+Du må ha hovedavhengigheten installert:
 
-- Node.js LTS v16 (or any higher version)
+- Node.js LTS v16 (eller nyere versjon)
 
-Do you use `nvm`? Then you can run `nvm install` in the project folder to install and use the most appropriate version of Node.js.
+Hvis du bruker `pnpm`, kan du deretter kjøre nvm install i prosjektmappen for å installere og bruke den mest egnede versjonen av Node.js.
 
 ### Get the repository
 
@@ -37,13 +37,13 @@ git clone https://github.com/dkshs/nlw-ai.git
 
 ### API - Backend
 
-To start the application we must start with the backend. Enter the backend folder:
+For å begynne med applikasjonen, må vi først starte på baksiden. Gå inn i backend-mappen:
 
 ```bash
 cd upload-ai-server/
 ```
 
-Install dependencies:
+Nødvendige installasjoner:
 
 ```bash
 pnpm install
