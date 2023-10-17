@@ -1,6 +1,6 @@
 # Trendify
 
-Application that allows you to upload videos and, through AI, automatically create eye-catching titles and descriptions with good indexing.
+Dette er en nettbasert app som starter ved å konvertere videoen til lyd, deretter transkriberer den til tekst. Ved hjelp av kunstig intelligens kan den også gi forslag til den optimale tittelen, beskrivelsen og hashtagene for videoen din.
 
 ## Directories and their technologies
 
