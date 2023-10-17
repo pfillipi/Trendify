@@ -5,13 +5,19 @@ Dette er en nettbasert app som starter ved å konvertere videoen til lyd, derett
 ## Directories and their technologies
 
 - [`api`](/api/) - Backend.
-  - [fastify](https://fastify.dev/)
-  - [prisma](https://www.prisma.io/)
-  - [openai](https://openai.com/)
+  - [Fastify](https://fastify.dev/)
+  - [Prisma](https://www.prisma.io/)
+  - [OpenAI](https://openai.com/)
+  - [Ffmpeg](https://ffmpeg.org)
+  - [Axios](https://axios-http.com/)
+  - [Zod](https://zod.dev/)
+ 
 - [`web`](/web/) - Frontend.
+  - [React](https://react.dev/) 
   - [Vite](https://vitejs.dev/)
   - [TailwindCSS](https://tailwindcss.com/)
-  - [Vercel AI SDK](https://github.com/vercel/ai)
+  - [Vercel AI SDK](https://github.com/vercel/ai/)
+  - [Shadcn/ui](https://ui.shadcn.com)
 
 ## Install and run the project
 
