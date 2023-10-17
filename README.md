@@ -50,7 +50,7 @@ Run backend:
 
 ### Web - Frontend
 
-With the Backend configured following the steps above, we can run the Frontend. Go to the [`web/`](/web/) folder:
+With the Backend configured following the steps above, we can run the Frontend. Go to the [`upload-ai-web/`](/upload-ai-web/) folder:
 
 ```bash
 cd web/
