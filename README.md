@@ -55,25 +55,25 @@ Kjør backend:
 
 ### Web - Frontend
 
-With the Backend configured following the steps above, we can run the Frontend. Go to the [`upload-ai-web/`](/upload-ai-web/) folder:
+Når bakenden er satt opp i henhold til trinnene over, kan vi starte frontend. Gå til mappen [`upload-ai-web/`](/upload-ai-web/):
 
 ```bash
 cd web/
 ```
 
-Install dependencies:
+Satt opp nødvendige programvarekomponenter:
 
 ```bash
 pnpm install
 ```
 
-Run frontend:
+Kjøre frontend:
 
-- With the [backend running](#api---backend), start the frontend with `pnpm run dev`. Your application will start at <http://localhost:5173>.
+- Når [bakenden er i gang](#api---backend), kan du starte frontenden med kommandoen `pnpm run dev`. Applikasjon din vil være tilgjengelig på <http://localhost:5173>.
 
-### Environment variables - [Only Backend](#api---backend)
+### Innstillinger for miljøvariabler - [Only Backend](#api---backend)
 
-- Create a `api/.env` file similar to [`api/.env.example`](./api/.env.example).
+- Opprett en fil med navnet `api/.env` og sørg for at den har samme innhold som filen  [`api/.env.example`](./api/.env.example).
 
 ```env
 DATABASE_URL="file:./dev.db"
