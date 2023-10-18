@@ -60,7 +60,7 @@ Kjør backend:
 Når bakenden er satt opp i henhold til trinnene over, kan vi starte frontend. Gå til mappen [`upload-ai-web/`](/upload-ai-web/):
 
 ```bash
-cd web/
+cd upload-ai-web/
 ```
 
 Satt opp nødvendige programvarekomponenter:
