@@ -13,7 +13,9 @@ Dette er en nettbasert app som starter ved å konvertere videoen til lyd, derett
   - [Zod](https://zod.dev/)
  
 - [`web`](/web/) - Frontend.
-  - [React](https://react.dev/) 
+
+  - [React](https://react.dev/)
+  - [TypeScript](https://www.typescriptlang.org/)
   - [Vite](https://vitejs.dev/)
   - [TailwindCSS](https://tailwindcss.com/)
   - [Vercel AI SDK](https://github.com/vercel/ai/)
