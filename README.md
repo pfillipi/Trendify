@@ -71,7 +71,7 @@ Kjøre frontend:
 
 - Når [bakenden er i gang](#api---backend), kan du starte frontenden med kommandoen `pnpm run dev`. Applikasjon din vil være tilgjengelig på <http://localhost:5173>.
 
-### Innstillinger for miljøvariabler - [Only Backend](#api---backend)
+### Innstillinger for miljøvariabler - [Kun backenden](#api---backend)
 
 - Opprett en fil med navnet `api/.env` og sørg for at den har samme innhold som filen  [`api/.env.example`](./api/.env.example).
 
